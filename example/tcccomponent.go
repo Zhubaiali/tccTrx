@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"tccTrx/component"
+	"tccTrx/example/pkg"
 )
 
 // tcc 组件侧记录的一笔事务的状态
