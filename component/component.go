@@ -2,7 +2,7 @@ package component
 
 import "context"
 
-// TCCReq tcc 请求参数
+// TCCReq 请求参数
 type TCCReq struct {
 	// 全局唯一的事务 id
 	ComponentID string                 `json:"componentID"`
@@ -10,14 +10,14 @@ type TCCReq struct {
 	Data        map[string]interface{} `json:"data"`
 }
 
-// TCCResp tcc 响应结果
+// TCCResp 响应结果
 type TCCResp struct {
 	ComponentID string `json:"componentID"`
 	ACK         bool   `json:"ack"`
 	TXID        string `json:"txID"`
 }
 
-// TCCComponent tcc 组件
+// TCCComponent 组件
 type TCCComponent interface {
 	ID() string
 	Try(ctx context.Context, req *TCCReq) (*TCCResp, error)
