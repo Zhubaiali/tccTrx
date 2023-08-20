@@ -166,14 +166,18 @@ func (t *TXManager) advanceProgress(tx *Transaction, success bool) error {
 	var componentID string
 	for _, tryEntity := range tx.Components {
 		if componentID == "" {
-			componentID = tryEntity.Component.ID()
+			componentID = tryEntity.ComponentID
 		}
-		resp, err := confirmOrCancel(t.ctx, tryEntity.Component)
+		components, err := t.registryCenter.Components(t.ctx, tryEntity.ComponentID)
+		if err != nil || len(components) == 0 {
+			return errors.New("get tcc component failed")
+		}
+		resp, err := confirmOrCancel(t.ctx, components[0])
 		if err != nil {
 			return err
 		}
 		if !resp.ACK {
-			return fmt.Errorf("tryEntity: %s ack failed", tryEntity.Component.ID())
+			return fmt.Errorf("tryEntity: %s ack failed", tryEntity.ComponentID)
 		}
 	}
 

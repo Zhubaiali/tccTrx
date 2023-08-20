@@ -41,7 +41,12 @@ const (
 
 type ComponentTryStatus string
 
+func (c ComponentTryStatus) String() string {
+	return string(c)
+}
+
 const (
+	TryHanging ComponentTryStatus = "hanging"
 	// 事务成功
 	TrySucceesful ComponentTryStatus = "successful"
 	// 事务失败
@@ -49,8 +54,8 @@ const (
 )
 
 type ComponentTryEntity struct {
-	Component component.TCCComponent
-	TryStatus ComponentTryStatus
+	ComponentID string
+	TryStatus   ComponentTryStatus
 }
 
 // 事务
@@ -65,7 +70,7 @@ func NewTransaction(txID string, componentEntities ComponentEntities) *Transacti
 	entities := make([]*ComponentTryEntity, 0, len(componentEntities))
 	for _, componentEntity := range componentEntities {
 		entities = append(entities, &ComponentTryEntity{
-			Component: componentEntity.Component,
+			ComponentID: componentEntity.Component.ID(),
 		})
 	}
 	return &Transaction{
