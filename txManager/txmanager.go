@@ -110,18 +110,12 @@ func (t *TXManager) batchAdvanceProgress(txs []*Transaction) error {
 	go func() {
 		var wg sync.WaitGroup
 		for _, tx := range txs {
-			txStatus := tx.getStatus(time.Now().Add(-t.opts.Timeout))
-			// hanging 状态的暂时不处理
-			if txStatus == TXHanging {
-				continue
-			}
-
 			// shadow
 			tx := tx
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				if err := t.advanceProgress(tx, txStatus == TXSucceesful); err != nil {
+				if err := t.advanceProgress(tx); err != nil {
 					errCh <- err
 				}
 			}()
@@ -141,8 +135,27 @@ func (t *TXManager) batchAdvanceProgress(txs []*Transaction) error {
 	return firstErr
 }
 
-func (t *TXManager) advanceProgress(tx *Transaction, success bool) error {
-	// 推进为成功
+// 传入一个事务 id 推进其进度
+func (t *TXManager) advanceProgressByTXID(txID string) error {
+	// 查询 txStore 获得该事务所有 try 操作的进度
+	// 但凡有一个失败，视为失败
+	// 所有的都成功视为成功
+	tx, err := t.txStore.GetTX(t.ctx, txID)
+	if err != nil {
+		return err
+	}
+	return t.advanceProgress(tx)
+}
+
+// 传入一个事务 id 推进其进度
+func (t *TXManager) advanceProgress(tx *Transaction) error {
+	txStatus := tx.getStatus(time.Now().Add(-t.opts.Timeout))
+	// hanging 状态的暂时不处理
+	if txStatus == TXHanging {
+		return nil
+	}
+
+	success := txStatus == TXSuccessful
 	var confirmOrCancel func(ctx context.Context, component component.TCCComponent) (*component.TCCResp, error)
 	var txAdvanceProgress func(ctx context.Context, componentID string) error
 	if success {
@@ -150,7 +163,7 @@ func (t *TXManager) advanceProgress(tx *Transaction, success bool) error {
 			return component.Confirm(ctx, tx.TXID)
 		}
 		txAdvanceProgress = func(ctx context.Context, componentID string) error {
-			return t.txStore.TXUpdate(ctx, tx.TXID, componentID, true)
+			return t.txStore.TXSubmit(ctx, tx.TXID, true)
 		}
 
 	} else {
@@ -159,7 +172,7 @@ func (t *TXManager) advanceProgress(tx *Transaction, success bool) error {
 		}
 
 		txAdvanceProgress = func(ctx context.Context, componentID string) error {
-			return t.txStore.TXUpdate(ctx, tx.TXID, componentID, false)
+			return t.txStore.TXSubmit(ctx, tx.TXID, false)
 		}
 	}
 
@@ -168,7 +181,7 @@ func (t *TXManager) advanceProgress(tx *Transaction, success bool) error {
 		if componentID == "" {
 			componentID = tryEntity.ComponentID
 		}
-		components, err := t.registryCenter.Components(t.ctx, tryEntity.ComponentID)
+		components, err := t.registryCenter.Components(tryEntity.ComponentID)
 		if err != nil || len(components) == 0 {
 			return errors.New("get tcc component failed")
 		}
@@ -211,7 +224,9 @@ func (t *TXManager) twoPhaseCommit(ctx context.Context, txID string, componentEn
 					errCh <- fmt.Errorf("component: %s try failed", componentEntity.Component.ID())
 					return
 				}
-				_ = t.txStore.TXUpdate(cctx, txID, componentEntity.Component.ID(), true)
+				if err = t.txStore.TXUpdate(cctx, txID, componentEntity.Component.ID(), true); err != nil {
+					errCh <- err
+				}
 			}()
 		}
 
@@ -221,14 +236,14 @@ func (t *TXManager) twoPhaseCommit(ctx context.Context, txID string, componentEn
 
 	successful := true
 	if err := <-errCh; err != nil {
-		// 只要有一笔 try 请求失败了，其他的都进行终止
+		// 只要有一笔 try 请求出现问题，其他的都进行终止
 		cancel()
 		successful = false
 	}
 
 	// 执行二阶段
 	go func() {
-		_ = t.advanceProgress(NewTransaction(txID, componentEntities), successful)
+		go t.advanceProgressByTXID(txID)
 	}()
 	return successful, nil
 }
@@ -254,7 +269,7 @@ func (t *TXManager) getComponents(ctx context.Context, reqs ...*RequestEntity) (
 	}
 
 	// 校验其合法性
-	components, err := t.registryCenter.Components(ctx, componentIDs...)
+	components, err := t.registryCenter.Components(componentIDs...)
 	if err != nil {
 		return nil, err
 	}
