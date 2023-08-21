@@ -6,9 +6,9 @@ import (
 	"time"
 )
 
-// TXStore 事务日志管理
+// 事务日志管理
 type TXStore interface {
-	// CreateTX 创建一条事务
+	// 创建一条事务
 	CreateTX(ctx context.Context, components ...component.TCCComponent) (txID string, err error)
 	// TXUpdate 更新事务进度：
 	// 规则为：倘若有一个 component try 操作执行失败，则整个事务失败；倘若所有 component try 操作执行成功，则事务成功

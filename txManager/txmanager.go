@@ -13,21 +13,21 @@ import (
 
 // 2. TCC 组件注册模块
 
-// TXManager 3. 串联两个流程
+// 3. 串联两个流程
 type TXManager struct {
 	ctx            context.Context
 	stop           context.CancelFunc
 	opts           *Options
 	txStore        TXStore
-	registryCenter TCCRegistryCenter
+	registryCenter *RegistryCenter
 }
 
-func NewTXManager(txStore TXStore, registryCenter TCCRegistryCenter, opts ...Option) *TXManager {
+func NewTXManager(txStore TXStore, opts ...Option) *TXManager {
 	ctx, cancel := context.WithCancel(context.Background())
 	txManager := TXManager{
 		opts:           &Options{},
 		txStore:        txStore,
-		registryCenter: registryCenter,
+		registryCenter: NewRegistryCenter(),
 		ctx:            ctx,
 		stop:           cancel,
 	}
