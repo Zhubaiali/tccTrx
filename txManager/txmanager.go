@@ -35,7 +35,7 @@ func NewTXManager(txStore TXStore, registryCenter TCCRegistryCenter, opts ...Opt
 	for _, opt := range opts {
 		opt(txManager.opts)
 	}
-
+	repair(txManager.opts)
 	go txManager.run()
 	return &txManager
 }
