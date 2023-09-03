@@ -35,3 +35,6 @@
 ### 8. 获取TCC组件
 
 `getComponents`方法用于获取事务请求中的所有TCC组件，并检查它们的合法性
+
+## 单测演示
+![image](https://github.com/Zhubaiali/tccTrx/assets/69970253/16cdcfb3-4e0a-4d2b-b6ec-8a72a1ea22fd)
