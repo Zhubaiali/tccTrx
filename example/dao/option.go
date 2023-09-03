@@ -1,5 +1,9 @@
 package dao
 
+import (
+	"gorm.io/gorm"
+)
+
 type QueryOption func(db *gorm.DB) *gorm.DB
 
 func WithID(id uint) QueryOption {

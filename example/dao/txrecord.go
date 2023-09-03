@@ -3,6 +3,7 @@ package dao
 import (
 	"context"
 	"fmt"
+	"gorm.io/gorm"
 )
 
 type TXRecordPO struct {
