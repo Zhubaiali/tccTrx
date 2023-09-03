@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="056ebb16-fbb3-42ab-bc63-a71f8acf73dd" name="更改" comment="更新gorm依赖">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/dao/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/dao/option.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_test.go" afterDir="false" />
+    <list default="true" id="056ebb16-fbb3-42ab-bc63-a71f8acf73dd" name="更改" comment="优化单测">
       <change beforePath="$PROJECT_DIR$/example/pkg/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/pkg/mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +53,7 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go 测试.go test tccTrx/example">
     <configuration name="go build tccTrx" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="tccTrx" />
       <working_directory value="$PROJECT_DIR$" />
@@ -69,8 +63,20 @@
       <filePath value="$PROJECT_DIR$/group.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go test tccTrx/example" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="tccTrx" />
+      <working_directory value="$PROJECT_DIR$/example" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tccTrx/example" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 测试.go test tccTrx/example" />
         <item itemvalue="Go 构建.go build tccTrx" />
       </list>
     </recent_temporary>
@@ -92,7 +98,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更新gorm依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新gorm依赖" />
+    <MESSAGE value="txManager优化" />
+    <MESSAGE value="优化单测" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化单测" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
