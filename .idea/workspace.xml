@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="056ebb16-fbb3-42ab-bc63-a71f8acf73dd" name="更改" comment="优化单测">
-      <change beforePath="$PROJECT_DIR$/example/pkg/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/pkg/mysql.go" afterDir="false" />
+    <list default="true" id="056ebb16-fbb3-42ab-bc63-a71f8acf73dd" name="更改" comment="优化依赖">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pkg/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/pkg/redis.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/tcccomponent.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/tcccomponent.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/txstore.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/txstore.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +28,20 @@
   <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.20.7" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Zhubaiali"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="177b1efb-b621-4c76-b986-b9766b29531f" />
+        <option name="url" value="https://github.com/Zhubaiali/tccTrx.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,9 +71,14 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
-  <component name="RunManager" selected="Go 测试.go test tccTrx/example">
+  <component name="RunManager" selected="Go 测试.tccTrx/example 中的 Test_TCC">
     <configuration name="go build tccTrx" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="tccTrx" />
       <working_directory value="$PROJECT_DIR$" />
@@ -74,8 +99,21 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="tccTrx/example 中的 Test_TCC" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="tccTrx" />
+      <working_directory value="$PROJECT_DIR$/example" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tccTrx/example" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_TCC\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 测试.tccTrx/example 中的 Test_TCC" />
         <item itemvalue="Go 测试.go test tccTrx/example" />
         <item itemvalue="Go 构建.go build tccTrx" />
       </list>
@@ -100,7 +138,8 @@
     <MESSAGE value="更新gorm依赖" />
     <MESSAGE value="txManager优化" />
     <MESSAGE value="优化单测" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化单测" />
+    <MESSAGE value="优化依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化依赖" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

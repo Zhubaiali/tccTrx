@@ -2,6 +2,7 @@ package pkg
 
 import (
 	"fmt"
+	"github.com/xiaoxuxiansheng/redis_lock"
 	"sync"
 )
 

@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/xiaoxuxiansheng/redis_lock"
 	"tccTrx/component"
 	"tccTrx/example/pkg"
 )

@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	dsn      = "请输入 mysql sdn"
+	dsn      = "debian-sys-maint:cCxZbowDDn7xWMzg@tcp(127.0.0.1:3306)/tcc"
 	network  = "tcp"
 	address  = "请输入 redis ip:port"
 	password = "请输入 redis 密码"
