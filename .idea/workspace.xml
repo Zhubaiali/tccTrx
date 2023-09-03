@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="056ebb16-fbb3-42ab-bc63-a71f8acf73dd" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/group.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/group2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="056ebb16-fbb3-42ab-bc63-a71f8acf73dd" name="更改" comment="更新gorm依赖">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/dao/option.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/dao/option.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/dao/txrecord.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/dao/txrecord.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pkg/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/pkg/mysql.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +89,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新gorm依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新gorm依赖" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

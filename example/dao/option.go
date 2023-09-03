@@ -2,6 +2,7 @@ package dao
 
 import (
 	"gorm.io/gorm"
+	"tccTrx/txManager"
 )
 
 type QueryOption func(db *gorm.DB) *gorm.DB
@@ -12,7 +13,7 @@ func WithID(id uint) QueryOption {
 	}
 }
 
-func WithStatus(status txmanager.ComponentTryStatus) QueryOption {
+func WithStatus(status txManager.ComponentTryStatus) QueryOption {
 	return func(db *gorm.DB) *gorm.DB {
 		return db.Where("status = ?", status.String())
 	}
