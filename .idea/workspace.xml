@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="056ebb16-fbb3-42ab-bc63-a71f8acf73dd" name="更改" comment="优化依赖">
+      <change afterPath="$PROJECT_DIR$/example/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/example_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pkg/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/pkg/redis.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/tcccomponent.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/tcccomponent.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/txstore.go" beforeDir="false" afterPath="$PROJECT_DIR$/example/txstore.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
@@ -51,11 +50,15 @@
   "associatedIndex": -1
 }]]></component>
   <component name="ProjectId" id="2Up7ktVvWla0VHCyEuaNx1J9rsS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -78,7 +81,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Go 测试.tccTrx/example 中的 Test_TCC">
+  <component name="RunManager" selected="Go 测试.tccTrx/example 中的 Test_Redis">
     <configuration name="go build tccTrx" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="tccTrx" />
       <working_directory value="$PROJECT_DIR$" />
@@ -99,6 +102,18 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="tccTrx/example 中的 Test_Redis" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="tccTrx" />
+      <working_directory value="$PROJECT_DIR$/example" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="tccTrx/example" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_Redis\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="tccTrx/example 中的 Test_TCC" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="tccTrx" />
       <working_directory value="$PROJECT_DIR$/example" />
@@ -113,6 +128,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go 测试.tccTrx/example 中的 Test_Redis" />
         <item itemvalue="Go 测试.tccTrx/example 中的 Test_TCC" />
         <item itemvalue="Go 测试.go test tccTrx/example" />
         <item itemvalue="Go 构建.go build tccTrx" />
@@ -135,6 +151,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更新gorm依赖" />
     <MESSAGE value="txManager优化" />
     <MESSAGE value="优化单测" />
@@ -143,5 +160,16 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/example/example_test.go</url>
+          <line>105</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

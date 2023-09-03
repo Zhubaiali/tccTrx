@@ -2,6 +2,8 @@ package example
 
 import (
 	"context"
+	"fmt"
+	"github.com/go-redis/redis"
 	"tccTrx/example/dao"
 	"tccTrx/example/pkg"
 	"tccTrx/txManager"
@@ -12,9 +14,27 @@ import (
 const (
 	dsn      = "debian-sys-maint:cCxZbowDDn7xWMzg@tcp(127.0.0.1:3306)/tcc"
 	network  = "tcp"
-	address  = "请输入 redis ip:port"
-	password = "请输入 redis 密码"
+	address  = "127.0.0.1:6379"
+	password = ""
 )
+
+var rdb *redis.Client
+
+func Test_Redis(t *testing.T) {
+	rdb = redis.NewClient(&redis.Options{
+		Addr:     "localhost:6379",
+		Password: "", // no password set
+		DB:       0,  // use default DB
+	})
+	// 验证 redis 连接是否正常，get一个存在的key "kk1":
+	val2, _ := rdb.Get("kk1").Result()
+
+	zsetKey := "language_rank"
+
+	num, _ := rdb.ZAdd(zsetKey, redis.Z{Score: 100.0, Member: "C#"}).Result()
+	fmt.Println(num)
+	fmt.Println(val2)
+}
 
 func Test_TCC(t *testing.T) {
 	redisClient := pkg.NewRedisClient(network, address, password)

@@ -1,6 +1,10 @@
+gitee.com/wedone/redis_course v0.0.0-20230219054254-c537b97e1bd8 h1:JG3Gq8FybKzklh1wBu98z8Kd0bPLoCtY+jTSdmK+8Nk=
+gitee.com/wedone/redis_course v0.0.0-20230219054254-c537b97e1bd8/go.mod h1:ASkD1N84PXpS2i5qR8eNTAVbvyDCCdNSRMbUplwugqo=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/demdxx/gocast v1.2.0 h1:Z9zVpAjyTWJIJwFFynnOoP30yxot4Y2QafNPSD+VEEo=
 github.com/demdxx/gocast v1.2.0/go.mod h1:RTyqNS6BdIq/19jJX96PlVhfqG31tldKMnpVJnPa3pw=
+github.com/go-redis/redis v6.15.9+incompatible h1:K0pv1D7EQUjfyoMql+r/jZqCLizCGKFlFgcHWWmHQjg=
+github.com/go-redis/redis v6.15.9+incompatible/go.mod h1:NAIEuMOZ/fxfXJIrKDQDz8wamY7mA7PouImQ2Jvg6kA=
 github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/go-sql-driver/mysql v1.7.0/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
 github.com/go-sql-driver/mysql v1.7.1 h1:lUIinVbN1DY0xBg0eMOzmmtGoHwWBbvnWubQUrtU8EI=

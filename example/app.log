@@ -1,0 +1,13 @@
+2023-09-03T17:41:15.952+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 1, comonent id: componentB, err: dial tcp: lookup tcp/port: getaddrinfow: The specified class was not found.
+2023-09-03T17:41:15.952+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 1, comonent id: componentA, err: dial tcp: lookup tcp/port: getaddrinfow: The specified class was not found.
+2023-09-03T17:41:15.952+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 1, comonent id: componentC, err: dial tcp: lookup tcp/port: getaddrinfow: The specified class was not found.
+2023-09-03T17:55:04.508+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 2, comonent id: componentB, err: dial tcp: lookup tcp/port: getaddrinfow: The specified class was not found.
+2023-09-03T17:55:04.508+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 2, comonent id: componentA, err: dial tcp: lookup tcp/port: getaddrinfow: The specified class was not found.
+2023-09-03T17:55:04.508+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 2, comonent id: componentC, err: dial tcp: lookup tcp/port: getaddrinfow: The specified class was not found.
+2023-09-03T17:55:04.517+0800	ERROR	txManager/txmanager.go:237	tx updated failed, tx id: 2, component id: componentC, err: context canceled
+2023-09-03T17:57:33.349+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 3, comonent id: componentC, err: dial tcp: address 127.0.0.1: missing port in address
+2023-09-03T17:57:33.349+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 3, comonent id: componentA, err: dial tcp: address 127.0.0.1: missing port in address
+2023-09-03T17:57:33.349+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 3, comonent id: componentB, err: dial tcp: address 127.0.0.1: missing port in address
+2023-09-03T17:58:03.348+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 4, comonent id: componentA, err: dial tcp: address 127.0.0.1: missing port in address
+2023-09-03T17:58:03.348+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 4, comonent id: componentC, err: dial tcp: address 127.0.0.1: missing port in address
+2023-09-03T17:58:03.348+0800	ERROR	txManager/txmanager.go:234	tx try failed, tx id: 4, comonent id: componentB, err: dial tcp: address 127.0.0.1: missing port in address
